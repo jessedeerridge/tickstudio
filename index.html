@@ -82,7 +82,7 @@ html.piece-dragging,html.piece-dragging body{overflow:hidden!important;overscrol
 #board,#board svg,#diagram,#target,#diagram svg,#target svg{touch-action:pan-y}#board [data-piece]{touch-action:pan-y}#planInventory{display:flex;flex-direction:column;margin:12px 0 0;touch-action:pan-y}
 #planInventory:empty{display:none}
 .planPartsRow{display:flex;align-items:flex-start;gap:8px;min-width:0}
-.planPartsTag{display:grid;place-items:center;flex:0 0 36px;height:var(--inventory-tile);writing-mode:vertical-rl;border-radius:12px;background:#e8dccc;color:#78634e;font-size:12px;font-weight:700}
+.planPartsTag{display:grid;place-items:center;flex:0 0 36px;height:var(--inventory-tile);writing-mode:vertical-rl;text-orientation:upright;white-space:nowrap;border-radius:12px;background:#e8dccc;color:#78634e;font-size:12px;font-weight:700}
 .planPartsRail{display:flex;flex:1;min-width:0;gap:10px;overflow-x:auto;padding:0 1px 5px;touch-action:pan-x pan-y}
 #planInventory .part{flex:0 0 var(--inventory-tile);width:var(--inventory-tile)}
 #planInventory .part,#planInventory .part svg{touch-action:pan-x pan-y;cursor:default}
@@ -252,6 +252,7 @@ function planLocked(part,placed){
   });
 }
 const planInventoryCategory=p=>p.startsWith('cap')?'cap':category(p);
+const planInventoryLabels={cap:'中心キャップ',dial:'文字盤',glyph:'数字・目盛り'};
 const planTiles=new Map();
 function renderPlanInventory(){
   const inventory=$('planInventory');
@@ -267,7 +268,7 @@ function renderPlanInventory(){
       row.dataset.category=kind;
       const tag=document.createElement('span');
       tag.className='planPartsTag';
-      tag.textContent=kind==='cap'?'中心キャップ':tabDefs.find(([key])=>key===kind)[1];
+      tag.textContent=planInventoryLabels[kind]??tabDefs.find(([key])=>key===kind)[1];
       row.setAttribute('role','group');
       row.setAttribute('aria-label',tag.textContent);
       rail=document.createElement('div');
