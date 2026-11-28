@@ -259,8 +259,6 @@ function planLocked(part,placed){
     return overlap>lower.mask.length*.2 || (overlap>0 && overlap===above.mask.length);
   });
 }
-const planInventoryCategory=p=>p.startsWith('cap')?'cap':category(p);
-const planInventoryLabels={cap:'中心キャップ',dial:'文字盤',glyph:'数字・目盛り'};
 const planTiles=new Map();
 function planGroups(part){
   return [...$('blueprints').querySelectorAll(`[data-plan="${CSS.escape(part)}"]`)];
@@ -295,7 +293,7 @@ function renderPlanInventory(){
   planTiles.clear();
   const rows=new Map();
   for(const part of [...correct].reverse()){
-    const kind=planInventoryCategory(part);
+    const kind=category(part);
     let rail=rows.get(kind);
     if(!rail){
       const row=document.createElement('div');
@@ -304,7 +302,7 @@ function renderPlanInventory(){
       tag.type='button';
       tag.className='planPartsTag';
       const label=document.createElement('span');
-      label.textContent=planInventoryLabels[kind]??tabDefs.find(([key])=>key===kind)[1];
+      label.textContent=tabDefs.find(([key])=>key===kind)[1];
       tag.append(label);
       tag.setAttribute('aria-pressed','false');
       row.setAttribute('role','group');
