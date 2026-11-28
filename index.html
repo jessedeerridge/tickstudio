@@ -79,16 +79,22 @@ html.piece-dragging,html.piece-dragging body{overflow:hidden!important;overscrol
 #game>section:has(>#switcher[hidden]){display:none!important}
 .shelfRail .directPart,.shelfRail .directPart svg{touch-action:none!important}.shelfRail:has(.directPart){gap:16px;padding-bottom:12px;height:calc(var(--tile) + 14px)}
 #clearConfetti{position:fixed;inset:0;pointer-events:none;z-index:99998;overflow:hidden}#clearConfetti[hidden]{display:none!important}#clearConfetti i{position:absolute;top:-18px;width:8px;height:14px;border-radius:2px;animation:clearFall 2.8s linear both}@keyframes clearFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}85%{opacity:1}100%{transform:translateY(105vh) rotate(650deg);opacity:0}}
-#board,#board svg,#diagram,#target,#diagram svg,#target svg{touch-action:pan-y}#board [data-piece]{touch-action:pan-y}#planInventory{display:flex;flex-direction:column;margin:12px 0 0;touch-action:pan-y}
+#board,#board svg{touch-action:pan-y}#diagram,#target,#diagram svg,#target svg{touch-action:pan-x}#board [data-piece]{touch-action:pan-y}#blueprints{display:flex;flex-wrap:nowrap;gap:0;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain}
+#blueprints>div{flex:0 0 100%;min-width:0;scroll-snap-align:start;padding:8px}
+#blueprints svg{display:block;width:min(100%,36dvh,320px);margin:auto}
+.planControls{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:8px}
+.planControls button{padding:6px 12px;font-size:13px}
+#planInventory{display:flex;flex-direction:column;justify-content:flex-start;max-height:38dvh;overflow-y:auto;overscroll-behavior:contain;margin:12px 0 0;touch-action:pan-x pan-y}
 #planInventory:empty{display:none}
 .planPartsRow{display:flex;align-items:flex-start;gap:8px;min-width:0}
 .planPartsTag{display:grid;place-items:center;flex:0 0 36px;height:var(--inventory-tile);writing-mode:vertical-rl;text-orientation:upright;white-space:nowrap;border-radius:12px;background:#e8dccc;color:#78634e;font-size:12px;font-weight:700}
 .planPartsRail{display:flex;flex:1;min-width:0;gap:10px;overflow-x:auto;padding:0 1px 5px;touch-action:pan-x pan-y}
 #planInventory .part{flex:0 0 var(--inventory-tile);width:var(--inventory-tile)}
-#planInventory .part,#planInventory .part svg{touch-action:pan-x pan-y;cursor:default}
+#planInventory .part,#planInventory .part svg,.planPartsTag{touch-action:pan-x pan-y;cursor:pointer}
 #planInventory .part[data-stored]{outline:2px solid #69a99b;outline-offset:-2px}
-#planInventory .part[data-stored],#planInventory .part[data-stored] svg{cursor:pointer}
-</style><main><section id="lobby"><div class="homeArt newHero"><svg viewBox="0 0 400 270" xmlns="http://www.w3.org/2000/svg" aria-label="Tick Studio"><defs><filter id="artShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#a16c56" flood-opacity=".18"/></filter></defs><rect width="400" height="270" rx="28" fill="#fff1e5"/><ellipse cx="200" cy="184" rx="117" ry="12" fill="#eadac9"/><g transform="translate(143 112) rotate(-12)" filter="url(#artShadow)"><circle r="71" fill="#a4c8bb" stroke="#659789" stroke-width="3"/><circle r="60" fill="#f5e3b5" stroke="#669789" stroke-width="2"/><g transform="translate(-24 -16)"><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(0)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(30)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(60)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(90)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(120)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(150)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(180)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(210)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(240)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(270)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(300)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(330)"/><circle r="22" fill="#e7a65f"/><circle r="12.100000000000001" fill="#fff1d8"/><circle r="3.96" fill="#e7a65f"/></g><g transform="translate(20 16)"><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(0)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(30)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(60)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(90)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(120)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(150)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(180)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(210)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(240)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(270)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(300)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(330)"/><circle r="27" fill="#d98d89"/><circle r="14.850000000000001" fill="#fff1d8"/><circle r="4.859999999999999" fill="#d98d89"/></g><g transform="translate(24 -32)"><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(0)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(30)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(60)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(90)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(120)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(150)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(180)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(210)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(240)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(270)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(300)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(330)"/><circle r="13" fill="#78aaa7"/><circle r="7.15" fill="#fff1d8"/><circle r="2.34" fill="#78aaa7"/></g></g><g transform="translate(247 101) rotate(12)" filter="url(#artShadow)"><circle cy="5" r="76" fill="#c97b79"/><circle r="76" fill="#efa5a0" stroke="#d58b87" stroke-width="2"/><circle r="64" fill="#fffdf5" stroke="#f7d2c2" stroke-width="3"/><circle cx="0.00" cy="-48.00" r="3.5" fill="#617c76"/><circle cx="24.00" cy="-41.57" r="2.2" fill="#617c76"/><circle cx="41.57" cy="-24.00" r="2.2" fill="#617c76"/><circle cx="48.00" cy="-0.00" r="3.5" fill="#617c76"/><circle cx="41.57" cy="24.00" r="2.2" fill="#617c76"/><circle cx="24.00" cy="41.57" r="2.2" fill="#617c76"/><circle cx="0.00" cy="48.00" r="3.5" fill="#617c76"/><circle cx="-24.00" cy="41.57" r="2.2" fill="#617c76"/><circle cx="-41.57" cy="24.00" r="2.2" fill="#617c76"/><circle cx="-48.00" cy="0.00" r="3.5" fill="#617c76"/><circle cx="-41.57" cy="-24.00" r="2.2" fill="#617c76"/><circle cx="-24.00" cy="-41.57" r="2.2" fill="#617c76"/><path d="M-27 -19L0 0 29 -35" fill="none" stroke="#526f69" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 0L15 39" stroke="#e5a45e" stroke-width="2.5" stroke-linecap="round"/><circle r="6" fill="#e5a45e"/></g><g fill="#e5ad65"><path d="M62 44q2 10 12 12-10 2-12 12-2-10-12-12 10-2 12-12"/><path d="M337 46q2 8 10 10-8 2-10 10-2-8-10-10 8-2 10-10"/><circle cx="350" cy="142" r="4"/></g><text x="200" y="235" text-anchor="middle" font-family="Trebuchet MS, sans-serif" font-weight="900" font-size="39" fill="#566b8e">Tick Studio</text></svg></div><input id="playerName" placeholder="名前" maxlength="24" autocomplete="nickname"><input id="room" placeholder="ルーム番号" maxlength="32"><div class="entryButtons"><button id="join">工房へ</button><button id="solo" class="secondary">おためし</button></div><p class="muted">3人で同じ番号を入力し、別々の役割を選んでください。</p></section><section id="levelSelect" hidden><button class="backStart" aria-label="戻る"><svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div id="levelPeople" class="people"></div><div id="levelGrid"><button id="levelOne" data-level="1">1</button><button data-level="2">2</button><button data-level="3">3</button><button data-level="4">4</button><button data-level="5">5</button><button data-level="6">6</button><button data-level="7">7</button><button data-level="8">8</button><button data-level="9">9</button><button data-level="10">10</button></div></section><section id="roleSelect" hidden><button class="backStart" aria-label="戻る"><svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div id="rolePeople" class="people"></div><div class="roleButtons"><div class="roleSlot"><span id="name-supply" class="personChip" hidden></span><button data-pick="supply">📦<span>パーツ係</span></button></div><div class="roleSlot"><span id="name-build" class="personChip" hidden></span><button data-pick="build">🔧<span>組み立て係</span></button></div><div class="roleSlot"><span id="name-guide" class="personChip" hidden></span><button data-pick="guide">📐<span>設計図係</span></button></div></div></section><div id="game" hidden><button class="backStart" id="gameBack" aria-label="戻る"><svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><header id="timerHeader"><span id="gameTimer">02:00</span><span id="levelBadge" hidden>LEVEL 1</span><span id="progress"></span></header><section><header><strong id="identity"></strong></header><div id="switcher" hidden><button data-role="supply">📦 パーツ係</button><button data-role="build">🔧 組み立て係</button><button data-role="guide">📐 設計図係</button></div><p id="hint"></p></section><section id="boardSection"><div id="board"></div><button id="cameraBtn" hidden aria-label="撮影 −10秒"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4l2-3h4l2 3h4a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="4"/></svg><span>（-10s）</span></button><button id="check" hidden>完成チェック</button><p id="result" style="text-align:center;font-weight:bold"></p></section><section id="tray"><h3 id="traytitle"></h3><div id="supplyInventory" class="inventory" hidden aria-label="組み立て係の手元"></div><div id="partsLayout"><nav id="partTabs" hidden></nav><div class="parts" id="parts"></div></div><p id="selection" class="muted"></p></section><section id="photoSection" hidden><div id="photoView"></div><span id="photoCountdown"></span></section><section id="plans" hidden><div style="display:flex;justify-content:flex-end;margin-bottom:8px"><button id="resetPlans" style="padding:6px 12px;font-size:13px">もどす</button></div><div id="blueprints"><div><div id="diagram"></div></div><div><div id="target"></div></div></div><div id="planInventory" class="inventory"></div></section></div><p id="status" role="status"></p><div id="clearConfetti" aria-hidden="true" hidden></div><div id="timePopup" role="alert" hidden>TIME UP!</div></main><script type="module">
+.planPartsTag[aria-pressed=true],.planPartsTag[aria-pressed=mixed]{outline:2px solid #69a99b;outline-offset:-2px}
+.planPartsTag{padding:0;border:0;box-shadow:none}
+</style><main><section id="lobby"><div class="homeArt newHero"><svg viewBox="0 0 400 270" xmlns="http://www.w3.org/2000/svg" aria-label="Tick Studio"><defs><filter id="artShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#a16c56" flood-opacity=".18"/></filter></defs><rect width="400" height="270" rx="28" fill="#fff1e5"/><ellipse cx="200" cy="184" rx="117" ry="12" fill="#eadac9"/><g transform="translate(143 112) rotate(-12)" filter="url(#artShadow)"><circle r="71" fill="#a4c8bb" stroke="#659789" stroke-width="3"/><circle r="60" fill="#f5e3b5" stroke="#669789" stroke-width="2"/><g transform="translate(-24 -16)"><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(0)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(30)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(60)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(90)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(120)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(150)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(180)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(210)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(240)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(270)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(300)"/><rect x="-3.74" y="-26" width="7.48" height="9" rx="2" fill="#e7a65f" transform="rotate(330)"/><circle r="22" fill="#e7a65f"/><circle r="12.100000000000001" fill="#fff1d8"/><circle r="3.96" fill="#e7a65f"/></g><g transform="translate(20 16)"><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(0)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(30)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(60)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(90)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(120)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(150)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(180)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(210)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(240)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(270)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(300)"/><rect x="-4.590000000000001" y="-31" width="9.180000000000001" height="9" rx="2" fill="#d98d89" transform="rotate(330)"/><circle r="27" fill="#d98d89"/><circle r="14.850000000000001" fill="#fff1d8"/><circle r="4.859999999999999" fill="#d98d89"/></g><g transform="translate(24 -32)"><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(0)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(30)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(60)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(90)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(120)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(150)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(180)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(210)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(240)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(270)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(300)"/><rect x="-2.21" y="-17" width="4.42" height="9" rx="2" fill="#78aaa7" transform="rotate(330)"/><circle r="13" fill="#78aaa7"/><circle r="7.15" fill="#fff1d8"/><circle r="2.34" fill="#78aaa7"/></g></g><g transform="translate(247 101) rotate(12)" filter="url(#artShadow)"><circle cy="5" r="76" fill="#c97b79"/><circle r="76" fill="#efa5a0" stroke="#d58b87" stroke-width="2"/><circle r="64" fill="#fffdf5" stroke="#f7d2c2" stroke-width="3"/><circle cx="0.00" cy="-48.00" r="3.5" fill="#617c76"/><circle cx="24.00" cy="-41.57" r="2.2" fill="#617c76"/><circle cx="41.57" cy="-24.00" r="2.2" fill="#617c76"/><circle cx="48.00" cy="-0.00" r="3.5" fill="#617c76"/><circle cx="41.57" cy="24.00" r="2.2" fill="#617c76"/><circle cx="24.00" cy="41.57" r="2.2" fill="#617c76"/><circle cx="0.00" cy="48.00" r="3.5" fill="#617c76"/><circle cx="-24.00" cy="41.57" r="2.2" fill="#617c76"/><circle cx="-41.57" cy="24.00" r="2.2" fill="#617c76"/><circle cx="-48.00" cy="0.00" r="3.5" fill="#617c76"/><circle cx="-41.57" cy="-24.00" r="2.2" fill="#617c76"/><circle cx="-24.00" cy="-41.57" r="2.2" fill="#617c76"/><path d="M-27 -19L0 0 29 -35" fill="none" stroke="#526f69" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M0 0L15 39" stroke="#e5a45e" stroke-width="2.5" stroke-linecap="round"/><circle r="6" fill="#e5a45e"/></g><g fill="#e5ad65"><path d="M62 44q2 10 12 12-10 2-12 12-2-10-12-12 10-2 12-12"/><path d="M337 46q2 8 10 10-8 2-10 10-2-8-10-10 8-2 10-10"/><circle cx="350" cy="142" r="4"/></g><text x="200" y="235" text-anchor="middle" font-family="Trebuchet MS, sans-serif" font-weight="900" font-size="39" fill="#566b8e">Tick Studio</text></svg></div><input id="playerName" placeholder="名前" maxlength="24" autocomplete="nickname"><input id="room" placeholder="ルーム番号" maxlength="32"><div class="entryButtons"><button id="join">工房へ</button><button id="solo" class="secondary">おためし</button></div><p class="muted">3人で同じ番号を入力し、別々の役割を選んでください。</p></section><section id="levelSelect" hidden><button class="backStart" aria-label="戻る"><svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div id="levelPeople" class="people"></div><div id="levelGrid"><button id="levelOne" data-level="1">1</button><button data-level="2">2</button><button data-level="3">3</button><button data-level="4">4</button><button data-level="5">5</button><button data-level="6">6</button><button data-level="7">7</button><button data-level="8">8</button><button data-level="9">9</button><button data-level="10">10</button></div></section><section id="roleSelect" hidden><button class="backStart" aria-label="戻る"><svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div id="rolePeople" class="people"></div><div class="roleButtons"><div class="roleSlot"><span id="name-supply" class="personChip" hidden></span><button data-pick="supply">📦<span>パーツ係</span></button></div><div class="roleSlot"><span id="name-build" class="personChip" hidden></span><button data-pick="build">🔧<span>組み立て係</span></button></div><div class="roleSlot"><span id="name-guide" class="personChip" hidden></span><button data-pick="guide">📐<span>設計図係</span></button></div></div></section><div id="game" hidden><button class="backStart" id="gameBack" aria-label="戻る"><svg viewBox="0 0 24 24" width="25" height="25" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button><header id="timerHeader"><span id="gameTimer">02:00</span><span id="levelBadge" hidden>LEVEL 1</span><span id="progress"></span></header><section><header><strong id="identity"></strong></header><div id="switcher" hidden><button data-role="supply">📦 パーツ係</button><button data-role="build">🔧 組み立て係</button><button data-role="guide">📐 設計図係</button></div><p id="hint"></p></section><section id="boardSection"><div id="board"></div><button id="cameraBtn" hidden aria-label="撮影 −10秒"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h4l2-3h4l2 3h4a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><circle cx="12" cy="13" r="4"/></svg><span>（-10s）</span></button><button id="check" hidden>完成チェック</button><p id="result" style="text-align:center;font-weight:bold"></p></section><section id="tray"><h3 id="traytitle"></h3><div id="supplyInventory" class="inventory" hidden aria-label="組み立て係の手元"></div><div id="partsLayout"><nav id="partTabs" hidden></nav><div class="parts" id="parts"></div></div><p id="selection" class="muted"></p></section><section id="photoSection" hidden><div id="photoView"></div><span id="photoCountdown"></span></section><section id="plans" hidden><div class="planControls"><button type="button" data-plan-view="diagram">内側</button><button type="button" data-plan-view="target">外側</button><button type="button" id="resetPlans">もどす</button></div><div id="blueprints"><div><div id="diagram"></div></div><div><div id="target"></div></div></div><div id="planInventory" class="inventory"></div></section></div><p id="status" role="status"></p><div id="clearConfetti" aria-hidden="true" hidden></div><div id="timePopup" role="alert" hidden>TIME UP!</div></main><script type="module">
 document.addEventListener('dblclick',e=>{if(!e.target.closest?.('input,textarea,[contenteditable]'))e.preventDefault();},{passive:false});
 
 
@@ -254,6 +260,33 @@ function planLocked(part,placed){
 const planInventoryCategory=p=>p.startsWith('cap')?'cap':category(p);
 const planInventoryLabels={cap:'中心キャップ',dial:'文字盤',glyph:'数字・目盛り'};
 const planTiles=new Map();
+function planGroups(part){
+  return [...$('blueprints').querySelectorAll(`[data-plan="${CSS.escape(part)}"]`)];
+}
+
+function setPlanGroupRemoved(group,removed){
+  group.toggleAttribute('data-stored',removed);
+  group.style.display=removed?'none':'';
+}
+
+function updatePlanTile(part){
+  const tile=planTiles.get(part);
+  const groups=planGroups(part);
+  const removed=groups.filter(group=>group.hasAttribute('data-stored')).length;
+  tile.toggleAttribute('data-stored',removed>0);
+  tile.setAttribute('aria-pressed',removed===0?'false':removed===groups.length?'true':'mixed');
+  const row=tile.closest('.planPartsRow');
+  const tiles=[...row.querySelectorAll('.part')];
+  const allRemoved=tiles.every(item=>item.getAttribute('aria-pressed')==='true');
+  const anyRemoved=tiles.some(item=>item.hasAttribute('data-stored'));
+  row.querySelector('.planPartsTag').setAttribute('aria-pressed',allRemoved?'true':anyRemoved?'mixed':'false');
+}
+
+function setPlanPartRemoved(part,removed){
+  for(const group of planGroups(part))setPlanGroupRemoved(group,removed);
+  updatePlanTile(part);
+}
+
 function renderPlanInventory(){
   const inventory=$('planInventory');
   inventory.replaceChildren();
@@ -265,49 +298,42 @@ function renderPlanInventory(){
     if(!rail){
       const row=document.createElement('div');
       row.className='planPartsRow';
-      row.dataset.category=kind;
-      const tag=document.createElement('span');
+      const tag=document.createElement('button');
+      tag.type='button';
       tag.className='planPartsTag';
       tag.textContent=planInventoryLabels[kind]??tabDefs.find(([key])=>key===kind)[1];
+      tag.setAttribute('aria-pressed','false');
       row.setAttribute('role','group');
       row.setAttribute('aria-label',tag.textContent);
       rail=document.createElement('div');
       rail.className='planPartsRail';
+      tag.onclick=()=>{
+        const tiles=[...rail.children];
+        const remove=tag.getAttribute('aria-pressed')!=='true';
+        for(const tile of tiles)setPlanPartRemoved(tile.dataset.planPart,remove);
+      };
       row.append(tag,rail);
       inventory.append(row);
       rows.set(kind,rail);
     }
 
-    const tile=document.createElement('div');
+    const tile=document.createElement('button');
+    tile.type='button';
     tile.className='part';
     tile.dataset.planPart=part;
     tile.innerHTML=svg(art(part,defaultAngle(part)));
+    tile.setAttribute('aria-label',catalog[typeOf(part)]||rail.parentElement.getAttribute('aria-label'));
+    tile.setAttribute('aria-pressed','false');
+    tile.onclick=()=>setPlanPartRemoved(part,!tile.hasAttribute('data-stored'));
     rail.append(tile);
     fitPartPreview(tile.querySelector('svg'),part);
     planTiles.set(part,tile);
-    let lastTap=0;
-    tile.onclick=()=>{
-      if(!tile.hasAttribute('data-stored'))return;
-      const now=Date.now();
-      if(now-lastTap<420){
-        for(const group of document.querySelectorAll(`#blueprints [data-plan="${CSS.escape(part)}"][data-stored]`)){
-          group.removeAttribute('data-stored');
-          group.style.display='';
-        }
-        tile.removeAttribute('data-stored');
-        tile.removeAttribute('title');
-        lastTap=0;
-      }else lastTap=now;
-    };
   }
 }
 
 function storePlanPart(group){
-  group.setAttribute('data-stored','');
-  group.style.display='none';
-  const tile=planTiles.get(group.dataset.plan);
-  tile.setAttribute('data-stored','');
-  tile.title='ダブルクリックでもどす';
+  setPlanGroupRemoved(group,true);
+  updatePlanTile(group.dataset.plan);
 }
 
 function enablePlan(id){
@@ -331,13 +357,22 @@ function enablePlan(id){
     const part=placed[group.dataset.plan];
     if(category(part.p)==='base'||planLocked(part,placed))return;
 
-    const guard=ev=>{if(ev.cancelable)ev.preventDefault()};
+    const guard=ev=>{
+      const touch=ev.touches[0];
+      if(touch&&Math.abs(touch.clientY-e.clientY)>Math.abs(touch.clientX-e.clientX)&&ev.cancelable)ev.preventDefault();
+    };
     if(e.pointerType==='touch')view.addEventListener('touchmove',guard,{passive:false});
-    let dragging=false;
+    let dragging=false, swiping=false;
     function move(ev){
       if(ev.pointerId!==e.pointerId||!view.isConnected||role!=='guide')return;
-      if(!dragging&&Math.hypot(ev.clientX-e.clientX,ev.clientY-e.clientY)<5)return;
+      const dx=ev.clientX-e.clientX, dy=ev.clientY-e.clientY;
+      if(swiping||(!dragging&&Math.hypot(dx,dy)<5))return;
       if(!dragging){
+        if(e.pointerType==='touch'&&Math.abs(dx)>=Math.abs(dy)){
+          swiping=true;
+          lastTap=null;
+          return;
+        }
         dragging=true;
         lastTap=null;
         lockPieceScroll(e.pointerId);
@@ -357,7 +392,7 @@ function enablePlan(id){
         unlockPieceScroll(e.pointerId);
         group.removeAttribute('transform');
       }
-      if(ev.type!=='pointerup'||!view.isConnected||role!=='guide'||expired(state))return;
+      if(swiping||ev.type!=='pointerup'||!view.isConnected||role!=='guide'||expired(state))return;
       const now=Date.now();
       if(dragging||(lastTap?.group===group&&now-lastTap.time<420)){
         lastTap=null;
@@ -372,6 +407,13 @@ function enablePlan(id){
 }
 function renderPlans(force=false){if(role!=='guide')return;const key=JSON.stringify([state.level,state.pattern,correct]);if(!force&&renderPlans.last===key)return;renderPlans.last=key;$('target').innerHTML=picture(Object.fromEntries(correct.map(p=>[p,{p,angle:defaultAngle(p)}])));$('diagram').innerHTML=picture(Object.fromEntries(correct.slice(0,correct.findIndex(p=>category(p)==='dial')).map(p=>[p,{p,angle:0}])));enablePlan('target');enablePlan('diagram');renderPlanInventory();}
 $('resetPlans').onclick=()=>renderPlans(true);
+for(const button of document.querySelectorAll('[data-plan-view]')){
+  button.onclick=()=>{
+    const track=$('blueprints'), slide=$(button.dataset.planView).parentElement;
+    const left=slide.getBoundingClientRect().left-track.getBoundingClientRect().left+track.scrollLeft;
+    track.scrollTo({left,behavior:'smooth'});
+  };
+}
 function enableShelfSwipe(rail){
 let start=null, suppress=false;
 rail.addEventListener('pointerdown',e=>{if(e.target.closest('.directPart')||e.button!==0)return;suppress=false;start={id:e.pointerId,x:e.clientX,y:e.clientY,left:rail.scrollLeft,mouse:e.pointerType==='mouse',drag:false};});
